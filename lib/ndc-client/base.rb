@@ -78,7 +78,7 @@ module NDCClient
       @method = method
       begin
         @status = :request_sent
-        @response = @client.post message.to_xml, DEFAULT_HEADERS.merge({'Authorization-Key': @rest_config['headers']['Authorization-Key']})
+        @response = @client.post message.to_xml, DEFAULT_HEADERS.merge({'Authorization-Key' => @rest_config['headers']['Authorization-Key']})
         @status_code = @response.code
         @status = :status_ok if @response.code == 200
         return @response
